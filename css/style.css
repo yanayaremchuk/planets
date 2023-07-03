@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+body{
+    font-family: 'Indie Flower', cursive;
+    background: url(../img/sky.jpg) 0 0/ 100% 100%;
+}
+[class*="__container"]{
+   max-width: 1500px;
+    margin: 0 auto;
+}
+.header__title{
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 100px #000000;;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+    animation: rotate-block 2s ease-out 1 normal running 0s forwards;
+}
+@keyframes rotate-block {
+	0% {
+		transform: translate(0px,-100px);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+.planet{
+    position: relative;
+    width: 800px;
+    height: 800px;
+   margin: 0 auto;
+}
+.planet__system img{
+    width: 150px;
+    height: 150px;
+}
+.sun{
+   position: absolute;
+   animation-name: example;
+   animation-duration: 60s;
+   animation-iteration-count: infinite;
+   animation-direction: reverse ;
+   left:250px;
+   top:230px;
+}
+.sun__image img{
+    width: 300px;
+    height: 300px;
+}
+@keyframes example {
+	0% {
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+.planet__system{
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.planet__system:hover
+{
+    transform: scale(1.5,1.5);
+    z-index: 10;
+    transition: all 0.3s ease 0.5s;
+}
+.planet__system:hover::after
+{
+    padding: 10px;
+    font-size: 24px;
+	width: 100px;
+	height: 50px;
+    background-color: rgb(4, 10, 15);
+    box-shadow: 2px 0px 2px 2px rgb(255, 255, 255);
+    color: aliceblue;
+    border-radius: 10px;
+	position: fixed;
+	top:100px;
+	left: 50px;
+}
+.mercury {
+    position: absolute;
+    left:70px;
+    top:70px;
+    animation-name: mercury-circle;
+}
+.mercury:hover::after{
+	content: "Mercury";
+    padding: 10px;
+    animation: text 1s linear infinite reverse ;
+}
+.mercury__image img {
+    width: 200px;
+    height: 150px;
+}
+@keyframes mercury-circle {
+    0%   {left:70px; top:70px;}
+    12%  {left:300px; top:20px;}
+    25%  {left:550px; top:70px;}
+    37%  {left:600px; top:300px;}
+    50%  {left:550px; top:550px;}
+    62%  {left:300px; top:600px;}
+    75%  {left:70px; top:550px;}
+    87%  {left:50px; top:300px;}
+    100% {left:70px; top:70px;}
+  }
+.venus {
+    position: absolute;
+    left:300px;
+    top:20px;
+    animation-name: venus-circle;
+}
+@keyframes venus-circle {
+    0%   {left:300px; top:20px;}
+    12%  {left:550px; top:70px;}
+    25%  {left:600px; top:300px;}
+    37%  {left:550px; top:550px;}
+    50%  {left:300px; top:600px;}
+    62%  {left:70px; top:550px;}
+    75%  {left:50px; top:300px;}
+    87%  {left:70px; top:70px;}
+    100% {left:300px; top:20px;}
+  }
+.venus:hover::after{
+	content: "Venus";
+    padding: 10px 20px;
+    left:30px;
+}
+.earth {
+    position: absolute;
+    left:550px;
+    top:70px;
+    animation-name: earth-circle;
+}
+@keyframes earth-circle {
+    0%  {left:550px; top:70px;}
+    12% {left:600px; top:300px;}
+    25% {left:550px; top:550px;}
+    37% {left:300px; top:600px;}
+    50% {left:70px; top:550px;}
+    62% {left:50px; top:300px;}
+    75% {left:70px; top:70px;}
+    87% {left:300px; top:20px;}
+    100%{left:550px; top:70px;}
+  }
+
+.earth:hover::after
+{
+    content: "Earth";
+    padding: 10px 20px;
+    left: 30px;
+}
+.mars {
+    position: absolute;
+    left:600px;
+    top:300px;
+    animation-name: mars-circle;
+}
+@keyframes mars-circle {
+    0%   {left:600px; top:300px;}
+    12%  {left:550px; top:550px;}
+    25%  {left:300px; top:600px;}
+    37%  {left:70px; top:550px;}
+    50%  {left:50px; top:300px;}
+    62%  {left:70px; top:70px;}
+    75%  {left:300px; top:20px;}
+    87%  {left:550px; top:70px;}
+    100% {left:600px; top:300px;}
+  }
+.mars:hover::after
+  {
+      content: "Mars";
+      padding: 10px 20px;
+      left: 30px;
+  }
+.jupiter {
+    position: absolute;
+    top:550px;
+    left:550px;
+    animation-name: jupiter-circle;
+}
+@keyframes jupiter-circle {
+    0%   {left:550px; top:550px;}
+    12%  {left:300px; top:600px;}
+    25%  {left:70px; top:550px;}
+    37%  {left:50px; top:300px;}
+    50%  {left:70px; top:70px;}
+    62%  {left:300px; top:20px;}
+    75%  {left:550px; top:70px;}
+    87%  {left:600px; top:300px;}
+    100% {left:550px; top:550px;}
+  }
+.jupiter:hover::after
+{
+    content: "Jupiter";
+    padding: 10px 20px;
+    left: 30px;
+}
+.saturn {
+    position: absolute;
+    top:600px;
+    left:300px;
+    animation-name: saturn-circle;
+}
+@keyframes saturn-circle {
+    0%   {left:300px; top:600px;}
+    12%  {left:70px; top:550px;}
+    25%  {left:50px; top:300px;}
+    37%  {left:70px; top:70px;}
+    50%  {left:300px; top:20px;}
+    62%  {left:550px; top:70px;}
+    75%  {left:600px; top:300px;}
+    87%  {left:550px; top:550px;}
+    100% {left:300px; top:600px;}
+  }
+.saturn__image img {
+    width: 200px;
+    height: 150px;
+}
+.saturn:hover::after
+{
+    content: "Saturn";
+    padding: 10px 20px;
+}
+.uranus {
+    position: absolute;
+    left:70px;
+    top:550px;
+    animation-name: uranus-circle;
+}
+@keyframes uranus-circle {
+    0%  {left:70px; top:550px;}
+    12% {left:50px; top:300px;}
+    25% {left:70px; top:70px;}
+    37% {left:300px; top:20px;}
+    50% {left:550px; top:70px;}
+    62% {left:600px; top:300px;}
+    75% {left:550px; top:550px;}
+    87% {left:300px; top:600px;}
+    100%{left:70px; top:550px;}
+  }
+.uranus:hover::after
+{
+    content: "Uranus";
+    padding: 10px 20px;
+    left:30px;
+}
+.neptune{
+    position: absolute;
+    left:50px;
+    top:300px;
+    animation-name: neptune-circle;
+}
+@keyframes neptune-circle {
+    0%  {left:50px; top:300px;}
+    12% {left:70px; top:70px;}
+    25% {left:300px; top:20px;}
+    37% {left:550px; top:70px;}
+    50% {left:600px; top:300px;}
+    62% {left:550px; top:550px;}
+    75% {left:300px; top:600px;}
+    87% {left:70px; top:550px;}
+    100%{left:50px; top:300px;}
+  }
+.neptune:hover::after
+  {
+      content: "Neptune";
+      padding: 10px;
+      left:30px;
+  }
+.comet {
+    position: relative;
+}
+
+.comet__1{
+    position: absolute;
+    animation:comet1-line 30s linear infinite normal 0s;
+}
+@keyframes comet1-line {
+	0% {
+		left:-100px; top:-1200px;
+	}
+	100%{
+		left:1000px; top:0px;
+	}
+}
+.comet__1 img{
+    width: 100px;
+    height: 100px;
+}
+.comet__1:hover{
+    animation-play-state: paused;
+}
+.comet__2{
+    position: absolute;
+    z-index: -1;
+    animation:comet2-line 60s linear infinite normal 0s;
+}
+@keyframes comet2-line {
+	0% {
+		left:-200px; top:-900px;
+	}
+	100%{
+		left: 1000px; top:0px;
+	}
+}
+.comet__2 img{
+    width: 150px;
+    height: 150px;
+}
+.footer__container{
+    font-size: 24px;
+    color: aliceblue;
+    left:800px;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.footer__container ::before {
+    content: "\00A9 ";
+    }
+.footer__container::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0px;
+        left: 0%;
+        height: 1px;
+        transition: width 0.3s ease 0s;
+        background-color: rgb(255, 255, 255);
+    }
+    .footer__container:hover::after{
+        width: 270px;
+    }
